@@ -617,3 +617,94 @@ jane.job ="Doctor";
 jane.birthyear =1999;
 jane["lastname"] ="smith";
 console.log(jane);
+
+
+
+
+
+
+
+/*****************
+ * Objects and methods
+ */
+ 
+var john ={
+    firstname: "Mahak",
+    lastname: "Garg",
+    birthyear:2004,
+    family:["Brijgopal","Hemlata","Nishant"],
+    job:"Engineer",
+    /*
+    calcage:function(){
+        return 2023-this.birthyear;
+    }
+    console.log(john.calcage());
+    */
+    calcAge: function(birthyear){
+       this.age =2023-this.birthyear;// return 2023-birthyear;
+    }
+};
+john.calcAge();
+console.log(john);
+//console.log(john.calcAge(2004));
+
+
+
+
+
+
+
+/***************************
+ * CODING CHALLENGE 4
+ */
+
+/*
+Let's remember the first coding challenge where Mark and John compared
+their BMIs. Let's now implement the same functionlity with objects and 
+methods.
+1) For each of them, create an object with properties for their full name
+   ,mass,and height.
+2) Then, add a method to each object to calculate the BMI.  Save the BMI to 
+   the object and also return it from the method.
+3) In the end, log to the console who has the highest BMI, together with the full 
+   name and the respective BMI. Don't forget they might have the same BMI.
+   
+REMEMBER: BMI=mass/height^2(mass in kg and height in meter).
+
+*/
+
+//SOLUTION
+var john ={
+    firstname :"JOHN",
+    lastname :"SMITH",
+    mass :40,
+    height :30,
+    BMI: function()
+    {
+        this.BMI=this.mass/(height*height);
+        return this.BMI;
+    }
+};
+var mark ={
+    firstname :"MARK",
+    lastname :"SMITH",
+    mass :20,
+    height :35,
+    BMI: function()
+    {
+        this.BMI=this.mass/(height*height);
+        return this.BMI;
+    }
+};
+var x=john.BMI();
+var y=mark.BMI();
+console.log(john);
+console.log(mark);
+if(x>y){
+        console.log(john.firstname,john.lastname,x);
+}
+    else if(y>x){
+        console.log(mark.firstname,mark.lastname,y);
+    }else
+        console.log("Both have same BMI");
+    
